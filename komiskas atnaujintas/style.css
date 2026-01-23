@@ -1,0 +1,100 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #f2eee3;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 20px;
+    letter-spacing: 3px;
+    color: #ff7b00;
+    text-shadow: 3px 3px 0 black;
+}
+
+.comic-container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+.panel {
+    border: 5px solid black;
+    margin: 30px 0;
+    padding: 20px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 #000;
+    min-height: 250px;
+}
+
+
+.bubble {
+    background: #fff;
+    padding: 12px 18px;
+    border: 3px solid black;
+    border-radius: 20px;
+    max-width: 65%;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    position: absolute;
+}
+
+.bubble.left { left: 20px; top: 20px; }
+.bubble.right { right: 20px; top: 20px; }
+.bubble.center { left: 50%; top: 20px; transform: translateX(-50%); }
+
+
+.character, .energy, .blast {
+    display: block;
+    margin: 50px auto 0 auto;
+    width: 230px;
+}
+
+.character.big {
+    width: 260px;
+}
+
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(150px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoom {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(-5px,3px); }
+    50% { transform: translate(5px,-3px); }
+    75% { transform: translate(-5px,-3px); }
+    100% { transform: translate(0,0); }
+}
+
+.fade-in { animation: fade 1.2s ease; }
+.slide-left { animation: slideIn 1s ease; }
+.zoom-in { animation: zoom 1s ease; }
+.shake { animation: shake 0.8s ease; }
