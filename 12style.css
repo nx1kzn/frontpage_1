@@ -1,2 +1,121 @@
-body{
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+body {
+    height: 100vh;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+.bg {
+    position: fixed;
+    inset: 0;
+    background: url("medic\ karo.jpg") center / cover no-repeat;
+    z-index: -2;
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.85)
+    );
+}
+
+
+.panel {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    width: 420px;
+    padding: 40px 38px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+
+.panel h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.panel p {
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #fff;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: 0.35s ease;
+}
+
+.menu a i {
+    opacity: 0.5;
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateX(8px);
+}
+
+
+.socials {
+    margin-top: 28px;
+    display: flex;
+    gap: 18px;
+}
+
+.socials a {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    opacity: 1;
+}
+
+
+@media (max-width: 700px) {
+    .panel {
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
