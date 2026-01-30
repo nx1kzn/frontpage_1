@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="12style.css">
-    <link rel="icon" type="image/x-icon" href="medic karo.jpg">
+    <link rel="icon" type="image/x-icon" href="images11111.jpg">
 </head>
 <body>
 
@@ -34,16 +34,40 @@
     </a>
 
     <a href="lss-web/index.html">
-       lss web <i class="fas fa-arrow-right"></i>
+       lšs web. <i class="fas fa-arrow-right"></i>
     </a>
 
     <a href="lk.HTML/index.html">
-       Lk <i class="fas fa-arrow-right"></i>
+       Lietuvos Kariuomenės.<i class="fas fa-arrow-right"></i>
     </a>
 
 
 
 </nav>
+<iframe
+  id="bgMusic"
+  width="0"
+  height="0"
+  src="https://www.youtube.com/embed/4HS8JVloglI?enablejsapi=1&loop=1&playlist=4HS8JVloglI"
+  frameborder="0"
+  allow="autoplay">
+</iframe>
+
+<script>
+let started = false;
+
+document.addEventListener("click", function () {
+  if (!started) {
+    document.getElementById("bgMusic").contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}', '*'
+    );
+    started = true;
+  }
+});
+</script>
+
+
+
 
 
     <div class="socials">
