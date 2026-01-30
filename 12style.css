@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     height: 100vh;
     font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -47,7 +46,7 @@ body {
     -webkit-backdrop-filter: blur(18px);
 
     border-radius: 22px;
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(255, 255, 255, 0.336);
     box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
