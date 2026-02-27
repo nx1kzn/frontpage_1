@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>Where's Waldo?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+
+    <h1 class="title">WHERE'S WALDO?</h1>
+
+    <div class="maps">
+
+       <div class="map-card" onclick="startGame('easy')">
+    <img src="easy.png" alt="Easy">
+    <h2>Easy</h2>
+</div>
+
+<div class="map-card" onclick="startGame('medium')">
+    <img src="medium.png" alt="Medium">
+    <h2>Medium</h2>
+</div>
+
+<div class="map-card" onclick="startGame('hard')">
+    <img src="hard.png" alt="Hard">
+    <h2>Hard</h2>
+</div>
+
+    </div>
+
+    <button class="btn" onclick="goLeaderboard()">Leaderboard</button>
+
+<script src="script.js"></script>
+</body>
+</html>

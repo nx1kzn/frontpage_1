@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+/* HOME */
+
+.title {
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+.maps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px;
+    flex-wrap: wrap;
+}
+
+.map-card {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.map-card img {
+    width: 250px;
+    border-radius: 15px;
+}
+
+.map-card:hover {
+    transform: scale(1.05);
+}
+
+/* BUTTONS */
+
+.btn {
+    padding: 12px 25px;
+    background: red;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.btn:hover {
+    background: darkred;
+}
+
+.small {
+    font-size: 14px;
+    padding: 8px 15px;
+}
+
+/* GAME */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#timer {
+    font-size: 30px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#gameImage {
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+    cursor: crosshair;
+}
+
+/* LEADERBOARD */
+
+table {
+    margin: 40px auto;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+th {
+    background: red;
+}
