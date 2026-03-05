@@ -1,9 +1,7 @@
 let seconds = 0;
 let timer = null;
 
-/* =========================
-   NAVIGACIJA
-========================= */
+
 
 function startGame(level){
     localStorage.setItem("level", level);
@@ -18,9 +16,7 @@ function goLeaderboard(){
     window.location.href = "leaderboard.html";
 }
 
-/* =========================
-   GAME
-========================= */
+
 
 function loadGame(){
 
@@ -42,12 +38,11 @@ function loadGame(){
 
     const waldo = waldoZones[level];
 
-    /* --- UŽKRAUNAM PAVEIKSLĄ --- */
+
     img.src = level + ".png";
 
     img.onload = function(){
 
-        // Reset timer
         seconds = 0;
         timerEl.innerText = "0s";
 
@@ -91,34 +86,4 @@ function loadGame(){
     };
 }
 
-/* =========================
-   LEADERBOARD
-========================= */
 
-function saveScore(name, time, level){
-    const scores = JSON.parse(localStorage.getItem("scores")) || [];
-    scores.push({name, time, level});
-    localStorage.setItem("scores", JSON.stringify(scores));
-}
-
-function loadLeaderboard(){
-    const tbody = document.getElementById("leaderboardBody");
-    if(!tbody) return;
-
-    const scores = JSON.parse(localStorage.getItem("scores")) || [];
-
-    scores.sort((a,b)=> a.time - b.time);
-
-    tbody.innerHTML = "";
-
-    scores.forEach(score=>{
-        const row = `
-            <tr>
-                <td>${score.name}</td>
-                <td>${score.time}s</td>
-                <td>${score.level}</td>
-            </tr>
-        `;
-        tbody.innerHTML += row;
-    });
-}

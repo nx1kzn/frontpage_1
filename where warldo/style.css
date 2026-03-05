@@ -3,10 +3,15 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: #111;
-    color: white;
+    color: rgb(122, 5, 5);
 }
 
-/* HOME */
+.bg {
+    position: fixed;
+    inset: 0;
+    background: url("1b72a8a0-722c-11ed-848f-c11f601a4be9.jpg") center / cover no-repeat;
+    z-index: -2;
+}
 
 .title {
     font-size: 50px;
@@ -35,7 +40,7 @@ body {
     transform: scale(1.05);
 }
 
-/* BUTTONS */
+
 
 .btn {
     padding: 12px 25px;
@@ -57,7 +62,6 @@ body {
     padding: 8px 15px;
 }
 
-/* GAME */
 
 .game-header {
     display: flex;
@@ -82,7 +86,7 @@ body {
     cursor: crosshair;
 }
 
-/* LEADERBOARD */
+
 
 table {
     margin: 40px auto;
