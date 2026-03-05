@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Where's Lithuanian?</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="icon" type="image/x-icon" href="1b72a8a0-722c-11ed-848f-c11f601a4be9.jpg">
+<meta charset="UTF-8">
+<title>Where's Waldo?</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="1b72a8a0-722c-11ed-848f-c11f601a4be9.jpg">
 </head>
-<body class="home">
 
-    <h1 class="title">WHERE'S LITHUANIAN?</h1>
+<body>
 
-    <div class="maps">
 <div class="bg"></div>
-       <div class="map-card" onclick="startGame('easy')">
-    <img src="easy.png" alt="Easy">
-    <h2>Easy</h2>
+
+<h1 class="title">WHERE'S WALDO?</h1>
+
+<div class="maps">
+
+<div class="map-card" onclick="startGame('easy')">
+<img src="easy.png">
+<h2>Easy</h2>
 </div>
 
 <div class="map-card" onclick="startGame('medium')">
-    <img src="medium.png" alt="Medium">
-    <h2>Medium</h2>
+<img src="medium.png">
+<h2>Medium</h2>
 </div>
 
 <div class="map-card" onclick="startGame('hard')">
-    <img src="hard.png" alt="Hard">
-    <h2>Hard</h2>
+<img src="hard.png">
+<h2>Hard</h2>
 </div>
 
-    </div>
+</div>
 
-    <button class="btn" onclick="goLeaderboard()">Leaderboard</button>
+<button class="btn" onclick="goLeaderboard()">Leaderboard</button>
 
 <script src="script.js"></script>
+
 </body>
 </html>

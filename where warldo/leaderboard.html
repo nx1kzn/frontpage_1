@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Leaderboard</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body onload="loadLeaderboard()" class="leaderboard">
 
-    <h1>🏆 Leaderboard</h1>
+<body onload="loadScores()">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Vardas</th>
-                <th>Laikas</th>
-                <th>Žemėlapis</th>
-            </tr>
-        </thead>
-        <tbody id="leaderboardBody"></tbody>
-    </table>
+<h1>Leaderboard</h1>
 
-    <button class="btn" onclick="goHome()">Back</button>
+<table>
 
-<script src="script.js"></script>
+<tr>
+<th>Player</th>
+<th>Time</th>
+<th>Level</th>
+</tr>
+
+<tbody id="scores"></tbody>
+
+</table>
+
+<button class="btn" onclick="goHome()">Home</button>
+
+<script>
+
+function loadScores(){
+
+let scores=JSON.parse(localStorage.getItem("scores"))||[]
+
+let table=document.getElementById("scores")
+
+scores.forEach(s=>{
+
+let row=`
+<tr>
+<td>${s.name}</td>
+<td>${s.time}s</td>
+<td>${s.level}</td>
+</tr>
+`
+
+table.innerHTML+=row
+
+})
+
+}
+
+</script>
+
 </body>
 </html>

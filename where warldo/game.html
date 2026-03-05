@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Game</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Find Waldo</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body onload="loadGame()" class="game">
 
-    <div class="game-header">
-        <button class="btn small" onclick="goHome()">🏠 Home</button>
-        <h2 id="timer">0s</h2>
-    </div>
+<body onload="loadGame()">
 
-    <div class="image-container">
-        <img id="gameImage" alt="Game Map">
-    </div>
+<div class="game-header">
+
+<button class="btn small" onclick="goHome()">Home</button>
+
+<h2 id="timer">0s</h2>
+
+</div>
+
+<div class="image-container">
+<div id="gameContainer">
+
+<img id="gameImage">
+
+<div id="waldoHitbox"></div>
+
+</div>
+</div>
 
 <script src="script.js"></script>
+
 </body>
 </html>

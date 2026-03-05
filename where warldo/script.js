@@ -1,89 +1,75 @@
-let seconds = 0;
-let timer = null;
+let seconds = 0
+let timer = null
 
-
+const waldoZones = {
+easy:{x:73,y:55},
+medium:{x:78,y:72},
+hard:{x:86,y:60}
+}
 
 function startGame(level){
-    localStorage.setItem("level", level);
-    window.location.href = "game.html";
+localStorage.setItem("level",level)
+window.location="game.html"
 }
 
 function goHome(){
-    window.location.href = "index.html";
+window.location="index.html"
 }
 
 function goLeaderboard(){
-    window.location.href = "leaderboard.html";
+window.location="leaderboard.html"
 }
-
-
 
 function loadGame(){
 
-    const level = localStorage.getItem("level");
+const level=localStorage.getItem("level")
 
-    if(!level){
-        window.location.href = "index.html";
-        return;
-    }
+const img=document.getElementById("gameImage")
+const hitbox=document.getElementById("waldoHitbox")
+const timerEl=document.getElementById("timer")
 
-    const img = document.getElementById("gameImage");
-    const timerEl = document.getElementById("timer");
+img.src=level+".png"
 
-    const waldoZones = {
-        easy:   { x: 73, y: 62, radius: 4 },
-        medium: { x: 41, y: 53, radius: 3 },
-        hard:   { x: 52, y: 48, radius: 2.5 }
-    };
+const waldo=waldoZones[level]
 
-    const waldo = waldoZones[level];
+hitbox.style.left=waldo.x+"%"
+hitbox.style.top=waldo.y+"%"
 
+seconds=0
 
-    img.src = level + ".png";
+clearInterval(timer)
 
-    img.onload = function(){
+timer=setInterval(()=>{
+seconds++
+timerEl.innerText=seconds+"s"
+},1000)
 
-        seconds = 0;
-        timerEl.innerText = "0s";
+hitbox.onclick=function(){
 
-        clearInterval(timer);
-        timer = setInterval(()=>{
-            seconds++;
-            timerEl.innerText = seconds + "s";
-        },1000);
+clearInterval(timer)
 
-        img.onclick = function(e){
+const name=prompt("Enter your name")
 
-            const rect = img.getBoundingClientRect();
-
-            const clickX = ((e.clientX - rect.left) / rect.width) * 100;
-            const clickY = ((e.clientY - rect.top) / rect.height) * 100;
-
-            const distance = Math.sqrt(
-                Math.pow(clickX - waldo.x,2) +
-                Math.pow(clickY - waldo.y,2)
-            );
-
-            if(distance < waldo.radius){
-                clearInterval(timer);
-
-                const name = prompt("Įvesk savo vardą:");
-
-                if(name){
-                    saveScore(name, seconds, level);
-                }
-
-                alert("🎉 Radai Waldo per " + seconds + " sekundžių!");
-                goLeaderboard();
-            } else {
-                alert("❌ Ne čia!");
-            }
-        };
-    };
-
-    img.onerror = function(){
-        alert("Nepavyko užkrauti paveikslo: " + level + ".png");
-    };
+if(name){
+saveScore(name,seconds,level)
 }
 
+alert("You found Waldo in "+seconds+" seconds!")
 
+window.location="leaderboard.html"
+
+}
+
+}
+
+function saveScore(name,time,level){
+
+let scores=JSON.parse(localStorage.getItem("scores"))||[]
+
+scores.push({name,time,level})
+
+scores.sort((a,b)=>a.time-b.time)
+
+localStorage.setItem("scores",JSON.stringify(scores))
+
+}
