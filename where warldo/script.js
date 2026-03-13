@@ -1,3 +1,73 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let seconds = 0
 let timer = null
 
@@ -16,9 +86,7 @@ function goHome(){
 window.location="index.html"
 }
 
-function goLeaderboard(){
-window.location="leaderboard.html"
-}
+
 
 function loadGame(){
 
@@ -59,17 +127,5 @@ alert("You found Waldo in "+seconds+" seconds!")
 window.location="leaderboard.html"
 
 }
-
-}
-
-function saveScore(name,time,level){
-
-let scores=JSON.parse(localStorage.getItem("scores"))||[]
-
-scores.push({name,time,level})
-
-scores.sort((a,b)=>a.time-b.time)
-
-localStorage.setItem("scores",JSON.stringify(scores))
 
 }

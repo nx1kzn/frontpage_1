@@ -24,29 +24,6 @@
 
 <button class="btn" onclick="goHome()">Home</button>
 
-<script>
-
-function loadScores(){
-
-let scores=JSON.parse(localStorage.getItem("scores"))||[]
-
-let table=document.getElementById("scores")
-
-scores.forEach(s=>{
-
-let row=`
-<tr>
-<td>${s.name}</td>
-<td>${s.time}s</td>
-<td>${s.level}</td>
-</tr>
-`
-
-table.innerHTML+=row
-
-})
-
-}
 
 </script>
 
